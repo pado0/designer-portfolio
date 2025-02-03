@@ -1,0 +1,41 @@
+.HeroSection {
+    display: flex;
+    align-items: flex-start; /* 항목들을 상단 정렬 */
+    gap: 2rem; /* 이미지와 텍스트 사이 간격 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 2rem 5rem;
+    font-family: InterVariableFont;
+}
+
+
+.HeroSection img {
+    width: 360px; /* 이미지 크기 조절 */
+    height: auto;
+}
+
+.HeroSection div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 텍스트 사이 간격 */
+}
+
+.HeroSection h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.HeroSection h2 {
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.HeroSection p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 700px;
+    line-height: 1.5;
+}
