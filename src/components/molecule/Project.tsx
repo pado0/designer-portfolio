@@ -13,7 +13,9 @@ const Project = ({
                      tagList,
                  }: ProjectProps) => {
     return <div className="Project">
-        <img src={getProjectImage(imageName)} alt="project image"/>
+        <div>
+            <img src={getProjectImage(imageName)} alt="project image"/>
+        </div>
         <div className="ProjectInformation">
             <div className="Title">{title}</div>
             <div className="TagList">

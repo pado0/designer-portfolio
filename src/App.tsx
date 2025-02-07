@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home.tsx";
 import Header from "./components/molecule/Header.tsx";
 import './index.css'
+import Footer from "./components/molecule/Footer.tsx";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                 </Routes>
+                <Footer/>
             </div>
         </Router>
     );

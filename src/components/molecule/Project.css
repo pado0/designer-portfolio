@@ -1,6 +1,18 @@
 .Project img {
-    width: 500px; /* 이미지 크기 조절 */
+    width: 600px; /* 이미지 크기 조절 */
     height: auto;
+}
+
+.Project img{
+    transition: transform 0.3s ease-in-out;
+}
+
+.Project img:hover {
+    transform: scale(1.1);
+}
+
+.Project > div {
+    overflow: hidden; /* 확대 시 이미지가 부모 밖으로 나가지 않게 함 */
 }
 
 .ProjectInformation {
@@ -13,11 +25,15 @@
     font-family: InterVariableFont;
     font-size: 20px;
     display: flex;
+    font-weight: 440
 }
+
 .TagList {
     display: flex;
     gap: 5px;
+    padding: 5px 0;
 }
+
 .Tag {
     display: inline-flex; /* 내용에 맞게 크기 조절 */
     align-items: center;
@@ -30,3 +46,4 @@
     color: #000; /* 글자 색 */
     background-color: #fff; /* 배경색 */
 }
+
