@@ -1,7 +1,7 @@
 .Footer {
     /*부모로서의 설정*/
     display: flex;
-    flex-wrap: wrap; /* 요소들이 줄 바꿈되도록 설정 */
+    flex-direction: column;
     justify-content: center; /* 가운데 정렬 (선택 사항) */
     gap: 30px; /* 요소들 사이 간격 */
     /*자식의 설정*/
@@ -15,14 +15,12 @@
 }
 
 .Footer > h1 {
-    width: 100%;
     font-size: 45px;
     font-family: InterVariableFont;
     margin: 70px 0 0 0;
 }
 
 .Footer > p {
-    width: 100%;
     max-width: 1000px;
     line-height: 1.5;
     padding: 0 20px;
