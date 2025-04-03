@@ -12,11 +12,15 @@ const Home = () => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
-                        observer.unobserve(entry.target); // 한 번만 적용하고 관찰 중지
+                    } else {
+                        entry.target.classList.remove("visible");
                     }
                 });
             },
-            { threshold: 0.1 } // 10% 이상 보일 때 애니메이션 적용
+            { 
+                threshold: 0.1,
+                rootMargin: "-50px 0px" // Add some margin to make the animation smoother
+            }
         );
 
         sectionsRef.current.forEach((section) => {

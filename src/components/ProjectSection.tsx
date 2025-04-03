@@ -1,5 +1,5 @@
 import "./FeaturedWork.css"
-import {ProjectSectionProps} from "./dto/Props";
+import {ProjectSectionProps} from "./dto/Props.tsx";
 import Project from "./molecule/Project.tsx";
 import './ProjectSection.css'
 
