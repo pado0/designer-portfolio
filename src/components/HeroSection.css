@@ -12,13 +12,14 @@
         align-items: flex-start; /* 항목들을 상단 정렬 */
         gap: 2rem; /* 이미지와 텍스트 사이 간격 */
         margin: 0 auto; /* 가운데 정렬 */
-        padding: 2rem 5rem;
+        padding: 2rem 10rem;
         font-family: InterVariableFont;
     }
     .HeroSection div {
         display: flex;
         flex-direction: column;
         gap: 0.5rem; /* 텍스트 사이 간격 */
+        padding-left: 25px;
     }
 
     .HeroSection h1 {
