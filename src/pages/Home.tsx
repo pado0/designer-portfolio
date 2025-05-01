@@ -10,45 +10,19 @@ const Home = () => {
         <div className="Home">
                 <HeroSection />
                 <ProjectSection
-                    title="Featured Work"
+                    title="Case Study"
                     description="From concept to completion, these projects highlight my expertise in Product Design."
                     projectList={[
                         {
-                            title: "Franchise Dashboard",
+                            title: "How I Reinvented POS UX—and Drove +40% Growth",
                             imageName: "project_1",
                             tagList: ["Web Design", "Research"],
                         },
                         {
-                            title: "POS for Restaurant",
+                            title: "Franchise-Ready Dashboard: From MVP to Growth Drivert",
                             imageName: "project_2",
                             tagList: ["App Design", "User Test"],
-                        },
-                        {
-                            title: "Smart Payroll for Owners",
-                            imageName: "project_3",
-                            tagList: ["App Design", "Research"],
-                        },
-                        {
-                            title: "Easy e-Certificates",
-                            imageName: "project_4",
-                            tagList: ["App Design"],
-                        },
-                    ]}
-                />
-                <ProjectSection
-                    title="Beyond the Interface"
-                    description="I also explore user research and seasonal event to create impactful user experiences."
-                    projectList={[
-                        {
-                            title: "Insight-Driven QR Sticker Redesign",
-                            imageName: "project_5",
-                            tagList: ["Research"],
-                        },
-                        {
-                            title: "Engaging Users with Happy Moments",
-                            imageName: "project_6",
-                            tagList: ["Project Management"],
-                        },
+                        }                   
                     ]}
                 />
             </div>
