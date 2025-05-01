@@ -1,14 +1,18 @@
 import { useEffect, useRef } from "react";
-import HeroSection from "../components/HeroSection.tsx";
+import HeroSection from "../components/HeroSection";
 import "./Home.css";
-import ProjectSection from "../components/ProjectSection.tsx";
+import ProjectSection from "../components/ProjectSection";
+import AboutMe from "../components/AboutMe";
 
 const Home = () => {
     const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     return (
         <div className="Home">
+            <div className="section">
                 <HeroSection />
+            </div>
+            <div className="section">
                 <ProjectSection
                     title="Case Study"
                     description="From concept to completion, these projects highlight my expertise in Product Design."
@@ -26,6 +30,10 @@ const Home = () => {
                     ]}
                 />
             </div>
+            <div className="section">
+                <AboutMe />
+            </div>
+        </div>
     );
 };
 
