@@ -20,33 +20,6 @@ html, body {
     font-family: InterVariableFont;
 }
 
-@keyframes fade-in-up {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.9s ease-out, transform 0.6s ease-out;
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fade-in-up 0.8s ease-out;
-}
-
-
 /* 노트북 & 테블릿 가로 (해상도 1024px ~ 1279px)*/
 @media all and (min-width:1024px) and (max-width:1279px) {
 }
