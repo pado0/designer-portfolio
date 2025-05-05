@@ -1,27 +1,43 @@
 @import './styleguide.css';
 .case-study-1 {
-  background: #fff;
-  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
-.gnb-wrapper {
-  width: 100%;
-  background: #fff;
-  z-index: 1000;
+.case-study-1-content {
+  display: flex;
+  grid-template-columns: repeat(12, 72px);
+  gap: 24px;
+  width: 1128px;
+  padding-bottom: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
 .case-study-1 .content {
-  width: 100%;
-  max-width: 900px;
+  grid-column: span 12;
   margin: 0 auto;
   padding: 48px 0 80px 0;
   font-family: 'Inter', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, sans-serif;
   font-size: 18px;
-  color: #222;
+  color: #222333;
   line-height: 1.85;
   font-weight: 400;
   display: block;
+}
+
+.case-study-1 .image-default {
+  /*display: block;*/
+  grid-column: span 12;
+  width:1128px;
+  height: auto;
+  /*margin: 32px auto 32px auto;*/
+  border-radius: 60px;
+  box-shadow: none;
 }
 
 .case-study-1 .header {
@@ -102,14 +118,7 @@
   font-weight: 500;
 }
 
-img, .image, .images {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 32px auto 32px auto;
-  border-radius: 8px;
-  box-shadow: none;
-}
+
 
 ol, ul {
   margin: 18px 0 18px 24px;
@@ -120,32 +129,3 @@ li {
   margin-bottom: 8px;
   line-height: 1.7;
 }
-
-@media (max-width: 1000px) {
-  .content {
-    max-width: 98vw;
-    padding: 32px 0 48px 0;
-    font-size: 16px;
-  }
-  .title {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .content {
-    max-width: 100vw;
-    padding: 18px 0 32px 0;
-    font-size: 15px;
-  }
-  .title {
-    font-size: 1.3rem;
-  }
-  .section-title {
-    font-size: 1.05rem;
-  }
-  img, .image, .images {
-    margin: 18px auto 18px auto;
-    border-radius: 4px;
-  }
-} 
