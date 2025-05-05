@@ -100,12 +100,12 @@
   }
   
   .page-project .closelook {
-    height: 510px;
+    /* height: 510px; */
     left: 0;
     object-fit: cover;
     position: absolute;
-    top: 0;
-    width: 840px;
+    top: -50px;
+    width: 100%;
     animation: fadeIn 0.5s forwards;
     transition: all 0.3s ease-out;
   }
@@ -137,12 +137,6 @@
   .page-project .img:active {
     transform: scale(0.95);
     transition-duration: 0.1s;
-  }
-  
-  .page-project .GNB-instance {
-    left: 156px !important;
-    position: absolute !important;
-    top: 60px !important;
   }
   
   .page-project .frame-2 {

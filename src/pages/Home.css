@@ -9,6 +9,7 @@
 
 .gnb-wrapper {
   width: 100%;
+  flex-direction: column;
   background-color: #ffffff;
 }
 
