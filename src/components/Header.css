@@ -1,26 +1,20 @@
 @import '../pages/styleguide.css';
 .gnb-menu {
-  display: grid;
-  grid-template-columns: repeat(12, 72px);
-  justify-content: end;
-  gap: 24px;
+  display: flex;
+  justify-content: flex-end;
   width: 1128px;
   padding-top: 60px;
   padding-bottom: 70px;
-
-}
-.gnb-wrapper {
-  grid-column: -1;
+  margin: 0 auto;
 }
 
 .nav-links {
-  grid-column: span 12;
   display: flex;
-  gap: 24px;
+  gap: 40px; /* 메뉴 간 간격 */
 }
 
 .gnb-menu-wrapper {
-  width: 80px;
+  width: auto; /* 너비 고정하지 않음 */
   color: #000000;
   font-family: var(--inter-16-bold-black-font-family);
   font-size: var(--inter-16-bold-black-font-size);
@@ -29,6 +23,7 @@
   letter-spacing: var(--inter-16-bold-black-letter-spacing);
   line-height: var(--inter-16-bold-black-line-height);
 }
+
 
 .gnb-menu{
   color: #000000;

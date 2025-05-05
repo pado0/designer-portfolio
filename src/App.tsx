@@ -5,7 +5,6 @@ import './index.css'
 import {Home} from "./pages/Home";
 import {CaseStudy1} from "./pages/CaseStudy1";
 import {CaseStudy2} from "./pages/CaseStudy2";
-import {Header} from "./components/Header.tsx";
 import {AboutMe} from "./pages/AboutMe.tsx";
 
 function App() {
