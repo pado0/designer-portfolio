@@ -81,13 +81,10 @@ export const PageProject = (): JSX.Element => {
                 <a href="https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ca21919550a8136b8c6d4e334ad6b39"
                    target="_blank" rel="noopener noreferrer">
                     <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail}/>
-                    {hovered === 'case1' && (
-                        <div className="case1-dim-overlay">
-                            <span className="case1-overlay-text">
-                                How I Reinvented POS UX<br/>—and Drove +40% Growth
-                            </span>
-                        </div>
-                    )}
+                    <div className="case-dim-overlay" style={{opacity: hovered === 'case1' ? 1 : 0}}></div>
+                    <span className="case-overlay-text" style={{opacity: hovered === 'case1' ? 1 : 0}}>
+                        How I Reinvented POS UX<br/>—and Drove +40% Growth
+                    </span>
                 </a>
             </div>
 
@@ -100,13 +97,10 @@ export const PageProject = (): JSX.Element => {
                 <a href="https://stingy-alto-975.notion.site/Franchise-Ready-Admin-From-MVP-to-Growth-Driver-1cf21919550a8055bcbde00d2b4524c4"
                    target="_blank" rel="noopener noreferrer">
                     <img className="thumbnail" alt="Thumbnail" src={case2Thumbnail}/>
-                    {hovered === 'case2' && (
-                        <div className="case2-dim-overlay">
-                            <span className="case2-overlay-text">
-                                Franchise-Ready Admin: From MVP to Growth Driver
-                            </span>
-                        </div>
-                    )}
+                    <div className="case-dim-overlay" style={{opacity: hovered === 'case2' ? 1 : 0}}></div>
+                    <span className="case-overlay-text" style={{opacity: hovered === 'case2' ? 1 : 0}}>
+                        Franchise-Ready Admin: From MVP to Growth Driver
+                    </span>
                 </a>
             </div>
 
