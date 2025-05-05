@@ -1,19 +1,17 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home.tsx";
-import Header from "./components/molecule/Header.tsx";
+
 import './index.css'
-import Footer from "./components/molecule/Footer.tsx";
+import { PageProject } from "./pages/PageProject";
 
 function App() {
     return (
         <Router>
             <div>
-                <Header/>
+                {/* <Header/> */}
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path="/" element={<PageProject/>}/>
                 </Routes>
-                <Footer/>
             </div>
         </Router>
     );

@@ -1,16 +1,29 @@
 @font-face {
-    font-family: "HeadingNowBook";
-    src: url("/HeadingNowTrial-63Book.ttf");
+    font-family: "Inter Bold";
+    src: url("/Inter-VariableFont.ttf");
+    font-weight: 700;
 }
 
 @font-face {
-    font-family: "HeadingNowRegular";
-    src: url("/HeadingNowTrial-64Regular.ttf");
+    font-family: "Inter Semi Bold";
+    src: url("/Inter-VariableFont.ttf");
+    font-weight: 600;
 }
 
 @font-face {
-    font-family: "InterVariableFont";
-    src: url("/Inter-VariableFont_opsz,wght.ttf");
+    font-family: "Inter Semi Regular";
+    src: url("/Inter-VariableFont.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Times New Roman Bold";
+    src: url("/Times New Roman Bold.ttf");
+}
+
+@font-face {
+    font-family: "Times New Roman";
+    src: url("/Times New Roman.ttf");
 }
 
 

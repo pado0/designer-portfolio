@@ -1,0 +1,166 @@
+@import './styleguide.css';
+.page-project {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .page-project .div-2 {
+    background-color: #ffffff;
+    height: 1816px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .page-project .thumbnail-wrapper {
+    background-color: #e2e2e2;
+    border-radius: 60px;
+    height: 510px;
+    left: 156px;
+    overflow: hidden;
+    position: absolute;
+    top: 492px;
+    width: 552px;
+  }
+  
+  .page-project .thumbnail {
+    height: 510px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 552px;
+  }
+  
+  .page-project .case-thumbnail-wrapper {
+    background-color: #455dfe;
+    border-radius: 60px;
+    height: 510px;
+    left: 732px;
+    overflow: hidden;
+    position: absolute;
+    top: 492px;
+    width: 552px;
+  }
+  
+  .page-project .hi-i-m-silvy-yang-i {
+    color: #000000;
+    font-family: var(--inter-57-semi-font-family);
+    font-size: var(--inter-57-semi-font-size);
+    font-style: var(--inter-57-semi-font-style);
+    font-weight: var(--inter-57-semi-font-weight);
+    left: 156px;
+    letter-spacing: var(--inter-57-semi-letter-spacing);
+    line-height: var(--inter-57-semi-line-height);
+    position: absolute;
+    top: 209px;
+  }
+  
+  .page-project .text-wrapper-2 {
+    color: #000000;
+    font-family: var(--inter-24-semi-font-family);
+    font-size: var(--inter-24-semi-font-size);
+    font-style: var(--inter-24-semi-font-style);
+    font-weight: var(--inter-24-semi-font-weight);
+    left: 156px;
+    letter-spacing: var(--inter-24-semi-letter-spacing);
+    line-height: var(--inter-24-semi-line-height);
+    position: absolute;
+    top: 1101px;
+    white-space: nowrap;
+  }
+  
+  .page-project .text-wrapper-3 {
+    color: #000000;
+    font-family: var(--inter-24-semi-font-family);
+    font-size: var(--inter-24-semi-font-size);
+    font-style: var(--inter-24-semi-font-style);
+    font-weight: var(--inter-24-semi-font-weight);
+    left: 156px;
+    letter-spacing: var(--inter-24-semi-letter-spacing);
+    line-height: var(--inter-24-semi-line-height);
+    position: absolute;
+    top: 427px;
+    white-space: nowrap;
+  }
+  
+  .page-project .closelook-wrapper {
+    background-color: #141414;
+    border-radius: 60px;
+    height: 510px;
+    left: 156px;
+    overflow: hidden;
+    position: absolute;
+    top: 1166px;
+    width: 840px;
+  }
+  
+  .page-project .closelook {
+    height: 510px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 840px;
+  }
+  
+  .page-project .image {
+    height: 38px;
+    left: 1238px;
+    position: absolute;
+    top: 1608px;
+    width: 40px;
+  }
+  
+  .page-project .img {
+    height: 38px;
+    left: 1163px;
+    position: absolute;
+    top: 1608px;
+    width: 41px;
+  }
+  
+  .page-project .GNB-instance {
+    left: 156px !important;
+    position: absolute !important;
+    top: 60px !important;
+  }
+  
+  .page-project .frame-2 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 1020px;
+    position: absolute;
+    top: 1196px;
+    width: 264px;
+  }
+  
+  .page-project .text-wrapper-4 {
+    align-self: stretch;
+    color: #000000;
+    font-family: var(--inter-24-semi-font-family);
+    font-size: var(--inter-24-semi-font-size);
+    font-style: var(--inter-24-semi-font-style);
+    font-weight: var(--inter-24-semi-font-weight);
+    letter-spacing: var(--inter-24-semi-letter-spacing);
+    line-height: var(--inter-24-semi-line-height);
+    margin-top: -1.00px;
+    position: relative;
+  }
+  
+  .page-project .p {
+    align-self: stretch;
+    color: #000000;
+    font-family: var(--times-20-reg-font-family);
+    font-size: var(--times-20-reg-font-size);
+    font-style: var(--times-20-reg-font-style);
+    font-weight: var(--times-20-reg-font-weight);
+    letter-spacing: var(--times-20-reg-letter-spacing);
+    line-height: var(--times-20-reg-line-height);
+    position: relative;
+  }
+  
