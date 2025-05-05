@@ -80,13 +80,17 @@
     height: 510px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .page-project .closelook-image {
     width: 100%;
     overflow: hidden;
-    margin-top: -10px;
+    /*margin-top: -20px;*/
 }
 
 
@@ -132,6 +136,7 @@
 .page-project .closelook-title {
     color: #000000;
     grid-column: span 3;
+    padding-top: 30px;
     font-family: var(--inter-24-semi-font-family);
     font-size: var(--inter-24-semi-font-size);
     font-style: var(--inter-24-semi-font-style);

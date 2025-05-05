@@ -22,7 +22,7 @@ export const Header = ({ activeMenu }: HeaderProps): JSX.Element => {
               </a>
             </div>
             <div className="gnb-menu-wrapper">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/silvy-yang-27bbb015b/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </div>
