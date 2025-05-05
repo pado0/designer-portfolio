@@ -4,7 +4,7 @@ import case1Thumbnail from "../assets/case1-thumbnail.png";
 import case2Thumbnail from "../assets/case2-thumbnail.png";
 import closelook1 from "../assets/closelook-1.gif";
 import closelook2 from "../assets/closelook-2.png";
-import closelook3 from "../assets/closelook-3.png";
+import closelook3 from "../assets/closelook3.png";
 import closelook4 from "../assets/closelook-4.png";
 import iconArrowLeft from "../assets/icon-arrow-left.svg";
 import iconArrowRight from "../assets/icon-arrow-right.svg";
