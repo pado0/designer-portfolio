@@ -7,14 +7,8 @@
   min-height: 100vh;
 }
 
-.gnb-wrapper {
-  width: 100%;
-  flex-direction: column;
-  background-color: #ffffff;
-}
-
 .content {
-  width: 100%;
+  width: 1128px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,4 +1,3 @@
-import { Gnb } from "../components/Gnb";
 import "./CaseStudy1.css";
 import case01 from "../assets/casestudy2/case2-01.png";
 import case02 from "../assets/casestudy2/case2-02.png";
