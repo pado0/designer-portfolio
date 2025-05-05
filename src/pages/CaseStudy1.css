@@ -1,0 +1,131 @@
+@import './styleguide.css';
+.case-study-1 {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.case-study-1-content {
+  display: flex;
+  grid-template-columns: repeat(12, 72px);
+  gap: 24px;
+  width: 1128px;
+  padding-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.case-study-1 .content {
+  grid-column: span 12;
+  margin: 0 auto;
+  padding: 48px 0 80px 0;
+  font-family: 'Inter', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, sans-serif;
+  font-size: 18px;
+  color: #222333;
+  line-height: 1.85;
+  font-weight: 400;
+  display: block;
+}
+
+.case-study-1 .image-default {
+  /*display: block;*/
+  grid-column: span 12;
+  width:1128px;
+  height: auto;
+  /*margin: 32px auto 32px auto;*/
+  border-radius: 60px;
+  box-shadow: none;
+}
+
+.case-study-1 .header {
+  margin-bottom: 48px;
+}
+
+.case-study-1 .title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111;
+  line-height: 1.25;
+}
+
+.role, .team, .duration {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.section {
+  margin-bottom: 40px;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 100%;
+  display: block;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #222;
+  line-height: 1.4;
+}
+
+.section-content, .description {
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 18px;
+  line-height: 1.85;
+  font-weight: 400;
+}
+
+.key-findings, .goals, .problem-list, .takeaways {
+  margin-top: 18px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.key-findings h3, .goals h3, .problem-list h3, .takeaways h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.quote {
+  font-size: 1.08rem;
+  font-style: italic;
+  color: #455dfe;
+  margin: 24px 0;
+  padding-left: 16px;
+  border-left: 3px solid #455dfe;
+  background: none;
+}
+
+.insight {
+  font-size: 1.08rem;
+  color: #455dfe;
+  margin: 18px 0;
+  padding: 0;
+  background: none;
+  border-left: 3px solid #455dfe;
+  font-weight: 500;
+}
+
+
+
+ol, ul {
+  margin: 18px 0 18px 24px;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}

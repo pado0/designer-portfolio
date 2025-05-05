@@ -1,0 +1,105 @@
+.aboutme-main-container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.aboutme-container {
+  display: flex;
+  grid-template-columns: repeat(12, 72px);
+  gap: 24px;
+  width: 1128px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutme-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutme-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.aboutme-title {
+  align-self: flex-start;
+  font-size: 57px;
+  font-family: 'Inter SemiBold';
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: left; /* 이미 있어도 무방 */
+}
+
+.aboutme-links a:hover {
+  text-decoration: underline;
+}
+
+.aboutme-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #fff;
+  padding-bottom: 30px;
+  gap: 40px;
+  margin-bottom: 0;
+}
+
+
+.aboutme-image-wrapper {
+  grid-column: span 6;
+  flex: 0 0 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.aboutme-image {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 60px;
+}
+
+.aboutme-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 400px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.aboutme-section-title {
+  font-family: 'Inter SemiBold';
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 0;
+}
+
+.aboutme-section-desc {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5em;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.aboutme-section-desc a {
+  color: #455dfe;
+  text-decoration: underline;
+}
