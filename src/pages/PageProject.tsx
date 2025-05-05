@@ -1,5 +1,5 @@
 import {useState, useEffect, useCallback} from "react";
-import {useNavigate} from "react-router-dom";
+// import {useNavigate} from "react-router-dom";
 import case1Thumbnail from "../assets/case1-thumbnail.png";
 import case2Thumbnail from "../assets/case2-thumbnail.png";
 import closelook1 from "../assets/closelook-1.gif";
@@ -35,7 +35,8 @@ const projects = [
 
 export const PageProject = (): JSX.Element => {
     const [current, setCurrent] = useState(0);
-    const navigate = useNavigate();
+    const [hovered, setHovered] = useState<null | 'case1' | 'case2'>(null);
+    // const navigate = useNavigate();
 
     const handleNext = useCallback(() => {
         setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
@@ -45,13 +46,13 @@ export const PageProject = (): JSX.Element => {
         setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
     }, []);
 
-    const handleCaseStudy1Click = () => {
-        navigate("/casestudy1");
-    };
+    // const handleCaseStudy1Click = () => {
+    //     // navigate("/casestudy1");
+    // };
 
-    const handleCaseStudy2Click = () => {
-        navigate("/casestudy2");
-    };
+    // const handleCaseStudy2Click = () => {
+    //     // navigate("/casestudy2");
+    // };
 
     // 자동 슬라이드 효과
     useEffect(() => {
@@ -73,54 +74,75 @@ export const PageProject = (): JSX.Element => {
             <div className="case-study-text">Case Study</div>
             <div
                 className="case1-thumbnail-wrapper"
-                onClick={handleCaseStudy1Click}
+                onMouseEnter={() => setHovered('case1')}
+                onMouseLeave={() => setHovered(null)}
                 style={{cursor: 'pointer'}}
             >
-                <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail}/>
+                <a href="https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ca21919550a8136b8c6d4e334ad6b39"
+                   target="_blank" rel="noopener noreferrer">
+                    <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail}/>
+                    {hovered === 'case1' && (
+                        <div className="case1-dim-overlay">
+                            <span className="case1-overlay-text">
+                                How I Reinvented POS UX<br/>—and Drove +40% Growth
+                            </span>
+                        </div>
+                    )}
+                </a>
             </div>
 
             <div
                 className="case2-thumbnail-wrapper"
-                onClick={handleCaseStudy2Click}
+                onMouseEnter={() => setHovered('case2')}
+                onMouseLeave={() => setHovered(null)}
                 style={{cursor: 'pointer'}}
             >
-                <img className="thumbnail" alt="Thumbnail" src={case2Thumbnail}/>
+                <a href="https://stingy-alto-975.notion.site/Franchise-Ready-Admin-From-MVP-to-Growth-Driver-1cf21919550a8055bcbde00d2b4524c4"
+                   target="_blank" rel="noopener noreferrer">
+                    <img className="thumbnail" alt="Thumbnail" src={case2Thumbnail}/>
+                    {hovered === 'case2' && (
+                        <div className="case2-dim-overlay">
+                            <span className="case2-overlay-text">
+                                Franchise-Ready Admin: From MVP to Growth Driver
+                            </span>
+                        </div>
+                    )}
+                </a>
             </div>
 
             <div className="quick-look-text">Quick Looks</div>
 
-                <div className="closelook-image-wrapper">
+            <div className="closelook-image-wrapper">
+                <img
+                    key={current}
+                    className="closelook-image slide-fade"
+                    alt="Closelook"
+                    src={projects[current].image}
+                />
+            </div>
+
+            <div className="closelook-arrow-text-wrapper">
+                <div key={current} className="closelook-text-wrapper slide-fade">
+                    <div className="closelook-title">{projects[current].title}</div>
+                    <p className="closelook-text">{projects[current].desc}</p>
+                </div>
+                <div className="arrow-wrapper">
                     <img
-                        key={current}
-                        className="closelook-image slide-fade"
-                        alt="Closelook"
-                        src={projects[current].image}
+                        className="left-arrow"
+                        alt="Left"
+                        src={iconArrowLeft}
+                        onClick={handlePrev}
+                        style={{cursor: 'pointer'}}
+                    />
+                    <img
+                        className="right-arrow"
+                        alt="Right"
+                        src={iconArrowRight}
+                        onClick={handleNext}
+                        style={{cursor: 'pointer'}}
                     />
                 </div>
-
-
-                <div className="closelook-arrow-text-wrapper">
-                    <div key={current} className="closelook-text-wrapper slide-fade">
-                        <div className="closelook-title">{projects[current].title}</div>
-                        <p className="closelook-text">{projects[current].desc}</p>
-                    </div>
-                    <div className="arrow-wrapper">
-                        <img
-                            className="left-arrow"
-                            alt="Left"
-                            src={iconArrowLeft}
-                            onClick={handlePrev}
-                            style={{cursor: 'pointer'}}
-                        />
-                        <img
-                            className="right-arrow"
-                            alt="Right"
-                            src={iconArrowRight}
-                            onClick={handleNext}
-                            style={{cursor: 'pointer'}}
-                        />
-                    </div>
-                </div>
+            </div>
         </div>
     );
 };
