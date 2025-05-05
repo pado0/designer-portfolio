@@ -78,7 +78,7 @@ export const PageProject = (): JSX.Element => {
                 onMouseLeave={() => setHovered(null)}
                 style={{cursor: 'pointer'}}
             >
-                <a href="https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ca21919550a8136b8c6d4e334ad6b39"
+                <a href="https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ea21919550a806e9428cebad06f3fcc"
                    target="_blank" rel="noopener noreferrer">
                     <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail}/>
                     <div className="case-dim-overlay" style={{opacity: hovered === 'case1' ? 1 : 0}}>
@@ -95,7 +95,7 @@ export const PageProject = (): JSX.Element => {
                 onMouseLeave={() => setHovered(null)}
                 style={{cursor: 'pointer'}}
             >
-                <a href="https://stingy-alto-975.notion.site/Franchise-Ready-Admin-From-MVP-to-Growth-Driver-1cf21919550a8055bcbde00d2b4524c4"
+                <a href="https://stingy-alto-975.notion.site/Franchise-Ready-Admin-From-MVP-to-Growth-Driver-1ea21919550a80a3884ee52352659d02"
                    target="_blank" rel="noopener noreferrer">
                     <img className="thumbnail" alt="Thumbnail" src={case2Thumbnail}/>
                     <div className="case-dim-overlay" style={{opacity: hovered === 'case2' ? 1 : 0}}>

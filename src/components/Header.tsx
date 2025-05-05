@@ -16,8 +16,10 @@ export const Header = ({ activeMenu }: HeaderProps): JSX.Element => {
             <div className={`gnb-menu-wrapper ${activeMenu === "about" ? "active" : ""}`}>
               <NavLink to="/about">About Me</NavLink>
             </div>
-            <div className={`gnb-menu-wrapper ${activeMenu === "resume" ? "active" : ""}`}>
-              <NavLink to="/resume">Resume</NavLink>
+            <div className="gnb-menu-wrapper">
+              <a href="https://drive.google.com/file/d/1Hif3-h-L5ksWdNYYKn-X6ld1gQGNhpye/view" target="_blank" rel="noopener noreferrer">
+                Resume
+              </a>
             </div>
             <div className="gnb-menu-wrapper">
               <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
