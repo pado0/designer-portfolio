@@ -8,15 +8,14 @@
 }
 
 .gnb-wrapper {
-  /* position: fixed; */
-  /* top: 0; */
-  /* left: 0; */
   width: 100%;
-  /* z-index: 1000; */
   background-color: #ffffff;
 }
 
 .content {
-
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }

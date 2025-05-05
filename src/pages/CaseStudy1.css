@@ -1,0 +1,98 @@
+/* .case-study-1 {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.gnb-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
+}
+
+.content {
+  margin-top: 80px;
+  padding: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.role, .team, .duration {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.section-content {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.quote {
+  font-size: 20px;
+  font-style: italic;
+  color: #455dfe;
+  margin: 20px 0;
+  padding-left: 20px;
+  border-left: 3px solid #455dfe;
+}
+
+.insight {
+  font-size: 18px;
+  font-weight: 500;
+  color: #455dfe;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(69, 93, 254, 0.1);
+  border-radius: 8px;
+}
+
+.key-findings, .goals, .problem-list, .takeaways {
+  margin-top: 20px;
+}
+
+.key-findings h3, .goals h3, .problem-list h3, .takeaways h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #000000;
+}  */

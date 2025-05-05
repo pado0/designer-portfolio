@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import case1Thumbnail from "../assets/case1-thumbnail.png";
 import case2Thumbnail from "../assets/case2-thumbnail.png";
 import closelook1 from "../assets/closelook-1.gif";
@@ -34,6 +35,7 @@ const projects = [
 
 export const PageProject = (): JSX.Element => {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
 
   const handleNext = useCallback(() => {
     setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
@@ -42,6 +44,14 @@ export const PageProject = (): JSX.Element => {
   const handlePrev = useCallback(() => {
     setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   }, []);
+
+  const handleCaseStudy1Click = () => {
+    navigate("/casestudy1");
+  };
+
+  const handleCaseStudy2Click = () => {
+    navigate("/casestudy2");
+  };
 
   // 자동 슬라이드 효과
   useEffect(() => {
@@ -58,11 +68,19 @@ export const PageProject = (): JSX.Element => {
     <div>
       <div className="page-project">
         <div className="div-2">
-          <div className="thumbnail-wrapper">
+          <div 
+            className="thumbnail-wrapper" 
+            onClick={handleCaseStudy1Click} 
+            style={{ cursor: 'pointer' }}
+          >
             <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail} />
           </div>
 
-          <div className="case-thumbnail-wrapper">
+          <div 
+            className="case-thumbnail-wrapper" 
+            onClick={handleCaseStudy2Click}
+            style={{ cursor: 'pointer' }}
+          >
             <img className="thumbnail" alt="Thumbnail" src={case2Thumbnail} />
           </div>
 
