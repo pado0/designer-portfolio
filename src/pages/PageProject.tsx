@@ -81,10 +81,11 @@ export const PageProject = (): JSX.Element => {
                 <a href="https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ca21919550a8136b8c6d4e334ad6b39"
                    target="_blank" rel="noopener noreferrer">
                     <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail}/>
-                    <div className="case-dim-overlay" style={{opacity: hovered === 'case1' ? 1 : 0}}></div>
-                    <span className="case-overlay-text" style={{opacity: hovered === 'case1' ? 1 : 0}}>
-                        How I Reinvented POS UX<br/>—and Drove +40% Growth
-                    </span>
+                    <div className="case-dim-overlay" style={{opacity: hovered === 'case1' ? 1 : 0}}>
+                        <span className="case-overlay-text">
+                            How I Reinvented POS UX<br/>—and Drove +40% Growth
+                        </span>
+                    </div>
                 </a>
             </div>
 
@@ -97,10 +98,11 @@ export const PageProject = (): JSX.Element => {
                 <a href="https://stingy-alto-975.notion.site/Franchise-Ready-Admin-From-MVP-to-Growth-Driver-1cf21919550a8055bcbde00d2b4524c4"
                    target="_blank" rel="noopener noreferrer">
                     <img className="thumbnail" alt="Thumbnail" src={case2Thumbnail}/>
-                    <div className="case-dim-overlay" style={{opacity: hovered === 'case2' ? 1 : 0}}></div>
-                    <span className="case-overlay-text" style={{opacity: hovered === 'case2' ? 1 : 0}}>
-                        Franchise-Ready Admin: From MVP to Growth Driver
-                    </span>
+                    <div className="case-dim-overlay" style={{opacity: hovered === 'case2' ? 1 : 0}}>
+                        <span className="case-overlay-text">
+                            Franchise-Ready Admin:<br/>From MVP to Growth Driver
+                        </span>
+                    </div>
                 </a>
             </div>
 

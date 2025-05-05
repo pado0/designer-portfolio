@@ -84,7 +84,7 @@
 
 
 .page-project .closelook-image {
-    width: 120%;
+    width: 100%;
     overflow: hidden;
     margin-top: -10px;
 }
@@ -190,24 +190,30 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .case-overlay-text {
     color: #fff;
-    font-size: 1.5rem;
+    font-family: var(--inter-24-semi-font-family);
+    font-size: var(--inter-24-semi-font-size);
+    font-style: var(--inter-24-semi-font-style);
+    font-weight: var(--inter-24-semi-font-weight);
+    letter-spacing: var(--inter-24-semi-letter-spacing);
+    line-height: var(--inter-24-semi-line-height);
+    text-align: left;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2;
-    text-align: center;
-    pointer-events: none;
+    z-index: 10;
+
+    /* pointer-events: none; */
 }
 
 .case1-thumbnail-wrapper:hover .case-dim-overlay {
     opacity: 1;
 }
 
-.case1-thumbnail-wrapper:hover .case-overlay-text {
+.case1-thumbnail-wrapper:hover .case-dim-overlay .case-overlay-text {
     opacity: 1;
 }
 
@@ -215,7 +221,11 @@
     opacity: 1;
 }
 
-.case2-thumbnail-wrapper:hover .case-overlay-text {
+.case2-thumbnail-wrapper:hover .case-dim-overlay .case-overlay-text {
+    opacity: 1;
+}
+
+.case-dim-overlay:hover .case-overlay-text {
     opacity: 1;
 }
   
