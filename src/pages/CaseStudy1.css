@@ -1,3 +1,4 @@
+@import './styleguide.css';
 .case-study-1 {
   background: #fff;
   min-height: 100vh;
@@ -10,7 +11,7 @@
   z-index: 1000;
 }
 
-.content {
+.case-study-1 .content {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -23,11 +24,11 @@
   display: block;
 }
 
-.header {
+.case-study-1 .header {
   margin-bottom: 48px;
 }
 
-.title {
+.case-study-1 .title {
   font-size: 2.6rem;
   font-weight: 700;
   margin-bottom: 16px;

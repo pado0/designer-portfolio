@@ -1,4 +1,4 @@
-import { Gnb } from "../components/Gnb";
+import { Header } from "../components/Header.tsx";
 import "./CaseStudy1.css";
 import case01 from "../assets/casestudy1/case1-01.png";
 import case02 from "../assets/casestudy1/case1-02.png";
@@ -27,7 +27,7 @@ export const CaseStudy1 = (): JSX.Element => {
   return (
     <div className="case-study-1">
       <div className="gnb-wrapper">
-        <Gnb property1="default" />
+        <Header property1="default" />
       </div>
       <div className="content">
         <div className="header">

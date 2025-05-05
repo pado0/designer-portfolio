@@ -4,6 +4,7 @@
     grid-template-columns: repeat(12, 72px);
     gap: 24px;
     width: 1128px;
+    padding-bottom: 100px;
   }
 
 .case1-thumbnail-wrapper {
@@ -44,6 +45,7 @@
 }
 
 .page-project .quick-look-text {
+    padding-top: 60px;
     grid-column: span 12;
     color: #000000;
     font-family: var(--inter-24-semi-font-family);

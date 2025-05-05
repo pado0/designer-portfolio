@@ -1,16 +1,14 @@
-import { Gnb } from "../components/Gnb";
 import "./Home.css";
-import { PageProject } from "./PageProject";
+import {PageProject} from "./PageProject";
+import {Header} from "../components/Header.tsx";
 
 export const Home = (): JSX.Element => {
-  return (
-    <div className="home">
-      <div className="gnb-wrapper">
-        <Gnb property1="default" />
-      </div>
-      <div className="content">
-        <PageProject />
-      </div>
-    </div>
-  );
+    return (
+        <div className="home">
+            <Header property1="default"></Header>
+            <main className="content">
+                <PageProject/>
+            </main>
+        </div>
+    );
 };
