@@ -51,19 +51,19 @@
   text-decoration: none;
 }
 
-.gnb-menu a:active {
+.gnb-menu-wrapper a:active {
   color: #000;
   text-decoration: none;
 }
 
-.gnb-menu a:focus {
+.gnb-menu-wrapper a:focus {
   color: #000;
   text-decoration: none;
   outline: none;
 }
 
-.gnb-menu a.active,
-.gnb-menu a:hover {
+.gnb-menu-wrapper a.active,
+.gnb-menu-wrapper a:hover {
   color: #455dfe;
   text-decoration: none;
 }

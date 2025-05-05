@@ -5,7 +5,7 @@ import {Header} from "../components/Header.tsx";
 export const Home = (): JSX.Element => {
     return (
         <div className="home">
-            <Header property1="default"></Header>
+            <Header activeMenu="projects"></Header>
             <main className="content">
                 <PageProject/>
             </main>
