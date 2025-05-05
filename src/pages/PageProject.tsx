@@ -7,7 +7,6 @@ import closelook3 from "../assets/closelook-3.png";
 import closelook4 from "../assets/closelook-4.png";
 import iconArrowLeft from "../assets/icon-arrow-left.svg";
 import iconArrowRight from "../assets/icon-arrow-right.svg";
-import { Gnb } from "../components/Gnb";
 import "./PageProject.css";
 
 const projects = [
@@ -57,7 +56,6 @@ export const PageProject = (): JSX.Element => {
 
   return (
     <div>
-      <Gnb property1="default" />
       <div className="page-project">
         <div className="div-2">
           <div className="thumbnail-wrapper">

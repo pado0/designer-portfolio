@@ -3,14 +3,14 @@ import "./App.css";
 
 import './index.css'
 import { PageProject } from "./pages/PageProject";
+import { Home } from "./pages/Home";
 
 function App() {
     return (
         <Router>
             <div>
-                {/* <Header/> */}
                 <Routes>
-                    <Route path="/" element={<PageProject/>}/>
+                    <Route path="/" element={<Home/>}/>
                 </Routes>
             </div>
         </Router>

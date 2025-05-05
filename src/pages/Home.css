@@ -1,0 +1,22 @@
+.home {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.gnb-wrapper {
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  width: 100%;
+  /* z-index: 1000; */
+  background-color: #ffffff;
+}
+
+.content {
+
+  width: 100%;
+}
