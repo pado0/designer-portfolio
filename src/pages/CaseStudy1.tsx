@@ -21,7 +21,7 @@ import case18 from "../assets/casestudy1/case1-18.png";
 import case19 from "../assets/casestudy1/case1-19.png";
 import case20 from "../assets/casestudy1/case1-20.png";
 import case21 from "../assets/casestudy1/case1-21.png";
-import case22 from "../assets/casestudy1/case1-22.png";
+
 
 export const CaseStudy1 = (): JSX.Element => {
   return (
@@ -277,4 +277,4 @@ export const CaseStudy1 = (): JSX.Element => {
       </div>
     </div>
   );
-}; 
+};
