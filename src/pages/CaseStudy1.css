@@ -1,98 +1,150 @@
-/* .case-study-1 {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
+.case-study-1 {
+  background: #fff;
   min-height: 100vh;
+  width: 100%;
 }
 
 .gnb-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
+  background: #fff;
   z-index: 1000;
-  background-color: #ffffff;
 }
 
 .content {
-  margin-top: 80px;
-  padding: 40px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 0 80px 0;
+  font-family: 'Inter', 'Apple SD Gothic Neo', 'Malgun Gothic', Arial, sans-serif;
+  font-size: 18px;
+  color: #222;
+  line-height: 1.85;
+  font-weight: 400;
+  display: block;
 }
 
 .header {
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 }
 
 .title {
-  font-size: 48px;
+  font-size: 2.6rem;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: #000000;
+  margin-bottom: 16px;
+  color: #111;
+  line-height: 1.25;
 }
 
 .role, .team, .duration {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #666666;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 4px;
 }
 
 .section {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 100%;
+  display: block;
 }
 
 .section-title {
-  font-size: 32px;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 20px;
-  color: #000000;
+  margin-bottom: 18px;
+  color: #222;
+  line-height: 1.4;
 }
 
-.section-content {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333333;
-  margin-bottom: 20px;
-}
-
-.description {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #333333;
-}
-
-.quote {
-  font-size: 20px;
-  font-style: italic;
-  color: #455dfe;
-  margin: 20px 0;
-  padding-left: 20px;
-  border-left: 3px solid #455dfe;
-}
-
-.insight {
-  font-size: 18px;
-  font-weight: 500;
-  color: #455dfe;
-  margin: 20px 0;
-  padding: 15px;
-  background-color: rgba(69, 93, 254, 0.1);
-  border-radius: 8px;
+.section-content, .description {
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 18px;
+  line-height: 1.85;
+  font-weight: 400;
 }
 
 .key-findings, .goals, .problem-list, .takeaways {
-  margin-top: 20px;
+  margin-top: 18px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
 }
 
 .key-findings h3, .goals h3, .problem-list h3, .takeaways h3 {
-  font-size: 24px;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 15px;
-  color: #000000;
-}  */
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.quote {
+  font-size: 1.08rem;
+  font-style: italic;
+  color: #455dfe;
+  margin: 24px 0;
+  padding-left: 16px;
+  border-left: 3px solid #455dfe;
+  background: none;
+}
+
+.insight {
+  font-size: 1.08rem;
+  color: #455dfe;
+  margin: 18px 0;
+  padding: 0;
+  background: none;
+  border-left: 3px solid #455dfe;
+  font-weight: 500;
+}
+
+img, .image, .images {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 32px auto 32px auto;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+ol, ul {
+  margin: 18px 0 18px 24px;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  .content {
+    max-width: 98vw;
+    padding: 32px 0 48px 0;
+    font-size: 16px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    max-width: 100vw;
+    padding: 18px 0 32px 0;
+    font-size: 15px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .section-title {
+    font-size: 1.05rem;
+  }
+  img, .image, .images {
+    margin: 18px auto 18px auto;
+    border-radius: 4px;
+  }
+} 
