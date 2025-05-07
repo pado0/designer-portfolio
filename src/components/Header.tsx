@@ -17,7 +17,7 @@ export const Header = ({ activeMenu }: HeaderProps): JSX.Element => {
               <NavLink to="/about">About Me</NavLink>
             </div>
             <div className="gnb-menu-wrapper">
-              <a href="https://drive.google.com/file/d/1Hif3-h-L5ksWdNYYKn-X6ld1gQGNhpye/view" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1JK3-3ASmIgYH5Ji6KOSQw8jR0yMM8Ycb/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </div>
