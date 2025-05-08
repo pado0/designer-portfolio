@@ -148,12 +148,12 @@
 .page-project .closelook-text {
     grid-column: span 3;
     color: #000000;
-    font-family: var(--times-20-reg-font-family);
-    font-size: var(--times-20-reg-font-size);
-    font-style: var(--times-20-reg-font-style);
-    font-weight: var(--times-20-reg-font-weight);
-    letter-spacing: var(--times-20-reg-letter-spacing);
-    line-height: var(--times-20-reg-line-height);
+    font-family: var(--inter-20-reg-font-family);
+    font-size: var(--inter-20-reg-font-size);
+    font-style: var(--inter-20-reg-font-style);
+    font-weight: var(--inter-20-reg-font-weight);
+    letter-spacing: var(--inter-20-reg-letter-spacing);
+    line-height: var(--inter-20-reg-line-height);
 }
 
 /* 롤링 애니메이션 스타일 */
