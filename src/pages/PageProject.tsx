@@ -17,12 +17,12 @@ const projects = [
         desc: "Built a review-friendly ordering flow and scaled it from scratch to 1,000 franchise locations.",
     },
     {
-        image: closelook3,
+        image: closelook1,
         title: "Paying Fines—Before They're Late",
         desc: "Partnered with traffic enforcement to integrate fine notifications and payments into one seamless flow.",
     },
     {
-        image: closelook1,
+        image: closelook3,
         title: "Branding for a New Ordering Habit",
         desc: "Collaborated with the brand team to introduce QR ordering to customers unfamiliar with the experience.",
     },
@@ -36,15 +36,26 @@ const projects = [
 export const PageProject = (): JSX.Element => {
     const [current, setCurrent] = useState(0);
     const [hovered, setHovered] = useState<null | 'case1' | 'case2'>(null);
+    const [isTransitioning, setIsTransitioning] = useState(false);
     // const navigate = useNavigate();
 
     const handleNext = useCallback(() => {
-        setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-    }, []);
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+            setIsTransitioning(false);
+        }, 500);
+    }, [isTransitioning]);
 
     const handlePrev = useCallback(() => {
-        setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-    }, []);
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+            setIsTransitioning(false);
+        }, 500);
+    }, [isTransitioning]);
 
     // const handleCaseStudy1Click = () => {
     //     // navigate("/casestudy1");
@@ -58,7 +69,7 @@ export const PageProject = (): JSX.Element => {
     useEffect(() => {
         const intervalId = window.setInterval(() => {
             handleNext();
-        }, 5000); // 5초마다 다음 슬라이드로
+        }, 7000); // 7초마다 다음 슬라이드로
 
         return () => {
             window.clearInterval(intervalId);
@@ -109,12 +120,14 @@ export const PageProject = (): JSX.Element => {
             <div className="quick-look-text">Quick Looks</div>
 
             <div className="closelook-image-wrapper">
-                <img
-                    key={current}
-                    className="closelook-image slide-fade"
-                    alt="Closelook"
-                    src={projects[current].image}
-                />
+                {projects.map((project, index) => (
+                    <img
+                        key={index}
+                        className={`closelook-image ${index === current ? 'fade-in' : 'fade-out'}`}
+                        alt="Closelook"
+                        src={project.image}
+                    />
+                ))}
             </div>
 
             <div className="closelook-arrow-text-wrapper">
