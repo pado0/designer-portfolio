@@ -2,6 +2,7 @@ import {useState, useEffect, useCallback} from "react";
 // import {useNavigate} from "react-router-dom";
 import case1Thumbnail from "../assets/case1-thumbnail.png";
 import case2Thumbnail from "../assets/case2-thumbnail.png";
+import case3Thumbnail from "../assets/case3-thumbnail.png";
 import closelook1 from "../assets/closelook-1.gif";
 import closelook2 from "../assets/closelook-2.png";
 import closelook3 from "../assets/closelook3.png";
@@ -35,7 +36,7 @@ const projects = [
 
 export const PageProject = (): JSX.Element => {
     const [current, setCurrent] = useState(0);
-    const [hovered, setHovered] = useState<null | 'case1' | 'case2'>(null);
+    const [hovered, setHovered] = useState<null | 'case1' | 'case2' | 'case3'>(null);
     const [isTransitioning, setIsTransitioning] = useState(false);
     // const navigate = useNavigate();
 
@@ -84,17 +85,17 @@ export const PageProject = (): JSX.Element => {
             </p>
             <div className="case-study-text">Case Study</div>
             <div
-                className="case1-thumbnail-wrapper"
-                onMouseEnter={() => setHovered('case1')}
+                className="case3-thumbnail-wrapper"
+                onMouseEnter={() => setHovered('case3')}
                 onMouseLeave={() => setHovered(null)}
                 style={{cursor: 'pointer'}}
             >
-                <a href="https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ea21919550a806e9428cebad06f3fcc"
+                <a href="https://stingy-alto-975.notion.site/When-UX-Meets-Bureaucracy-and-Wins-1f121919550a801083eaf7c7dd7c67f0"
                    target="_blank" rel="noopener noreferrer">
-                    <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail}/>
-                    <div className="case-dim-overlay" style={{opacity: hovered === 'case1' ? 1 : 0}}>
+                    <img className="thumbnail" alt="Thumbnail" src={case3Thumbnail}/>
+                    <div className="case-dim-overlay" style={{opacity: hovered === 'case3' ? 1 : 0}}>
                         <span className="case-overlay-text">
-                            How I Reinvented POS UX<br/>—and Drove +40% Growth
+                            When UX Meets Bureaucracy<br/>— and Wins
                         </span>
                     </div>
                 </a>
@@ -112,6 +113,22 @@ export const PageProject = (): JSX.Element => {
                     <div className="case-dim-overlay" style={{opacity: hovered === 'case2' ? 1 : 0}}>
                         <span className="case-overlay-text">
                             Franchise-Ready Admin:<br/>From MVP to Growth Driver
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <div
+                className="case1-thumbnail-wrapper"
+                onMouseEnter={() => setHovered('case1')}
+                onMouseLeave={() => setHovered(null)}
+                style={{cursor: 'pointer'}}
+            >
+                <a href="https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ea21919550a806e9428cebad06f3fcc"
+                   target="_blank" rel="noopener noreferrer">
+                    <img className="thumbnail" alt="Thumbnail" src={case1Thumbnail}/>
+                    <div className="case-dim-overlay" style={{opacity: hovered === 'case1' ? 1 : 0}}>
+                        <span className="case-overlay-text">
+                            How I Reinvented POS UX<br/>—and Drove +40% Growth
                         </span>
                     </div>
                 </a>
