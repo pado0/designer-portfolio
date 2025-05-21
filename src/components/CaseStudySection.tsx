@@ -38,7 +38,7 @@ export default function CaseStudySection() {
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900">Case Studies</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 grid-rows-2 gap-6">
-          {CASE_STUDIES.map((cs, i) => {
+          {CASE_STUDIES.map((cs) => {
             const isFranchise = cs.titleText === "Franchise-Ready Admin: From MVP to Growth Driver";
             const isPOS = cs.titleText === "How I Reinvented POS UX—and Drove +40% Growth";
             const isGov = cs.titleText === "What is getting a Government Certificate took just 10 seconds?";
