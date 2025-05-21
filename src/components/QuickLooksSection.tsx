@@ -93,7 +93,7 @@ export default function QuickLooksSection() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="w-full md:w-2/3 flex items-center justify-center relative lg:w-[64rem] md:w-[32rem]">
             {/* 이미지 슬라이드 */}
-            <div className="relative w-full h-80 md:h-[28rem] overflow-hidden rounded-lg shadow">
+            <div className="relative w-full h-80 md:h-[28rem] overflow-hidden rounded-[2.5rem] shadow">
               {/* 이전 이미지 (애니메이션) */}
               <Image
                 key={`prev-${prevItem.titleText}-${prevIndex}`}
@@ -101,7 +101,7 @@ export default function QuickLooksSection() {
                 alt={prevItem.titleText}
                 width={800}
                 height={600}
-                className={getImageClass(false)}
+                className={getImageClass(false) + ' rounded-[2.5rem]'}
                 style={{ pointerEvents: 'none' }}
                 priority
               />
@@ -112,7 +112,7 @@ export default function QuickLooksSection() {
                 alt={current.titleText}
                 width={800}
                 height={600}
-                className={getImageClass(true)}
+                className={getImageClass(true) + ' rounded-[2.5rem]'}
                 style={{ pointerEvents: 'none' }}
                 priority
               />
@@ -134,7 +134,7 @@ export default function QuickLooksSection() {
               </div>
             </div>
             {/* 방향키 버튼: 박스 하단에 고정, 가운데 정렬 */}
-            <div className="flex flex-row items-center justify-center gap-4 w-full mb-2">
+            <div className="flex flex-row items-center justify-center gap-4 w-full mb-1 md:mb-2">
               <button
                 className="bg-white/80 hover:bg-[#455dfe]/10 border border-gray-200 rounded-full p-2 shadow transition-colors focus:outline-none focus:ring-2 focus:ring-[#455dfe]"
                 aria-label="이전 이미지"
