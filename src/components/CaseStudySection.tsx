@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const CASE_STUDIES = [
   {
     title: <>
@@ -36,7 +38,7 @@ export default function CaseStudySection() {
       <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900">Case Studies</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 grid-rows-2 gap-6">
-          {CASE_STUDIES.map((cs, idx) => (
+          {CASE_STUDIES.map((cs) => (
             cs.link ? (
               <a
                 key={cs.titleText}
@@ -45,12 +47,15 @@ export default function CaseStudySection() {
                 rel="noopener noreferrer"
                 className="relative group rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-[#455dfe]"
               >
-                <img
+                <Image
                   src={cs.img}
                   alt={cs.titleText}
+                  width={800}
+                  height={600}
                   className="w-full h-[30rem] sm:h-80 lg:h-[28rem] object-cover group-hover:brightness-50 transition-all duration-400 select-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0"
                   style={{ userSelect: 'none' }}
                   tabIndex={-1}
+                  priority
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 bg-black/40">
                   <span className="text-white text-xl lg:text-2xl font-semibold px-4 py-2 text-center w-full break-words">{cs.title}</span>
@@ -58,12 +63,15 @@ export default function CaseStudySection() {
               </a>
             ) : (
               <div key={cs.titleText} className="relative group rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
-                <img
+                <Image
                   src={cs.img}
                   alt={cs.titleText}
+                  width={800}
+                  height={600}
                   className="w-full h-[30rem] sm:h-80 lg:h-[28rem] object-cover group-hover:brightness-50 transition-all duration-400 select-none outline-none focus:outline-none focus-visible:outline-none focus:ring-0"
                   style={{ userSelect: 'none' }}
                   tabIndex={-1}
+                  priority
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 bg-black/40">
                   <span className="text-white text-xl lg:text-2xl font-semibold px-4 py-2 text-center w-full break-words">{cs.title}</span>

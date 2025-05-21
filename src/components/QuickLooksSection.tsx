@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from "react";
+import Image from 'next/image';
 
 const QUICK_LOOKS = [
   {
@@ -61,13 +62,11 @@ export default function QuickLooksSection() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-    // eslint-disable-next-line
   }, [index]);
 
   const current = QUICK_LOOKS[index % QUICK_LOOKS.length];
   const prevItem = QUICK_LOOKS[prevIndex % QUICK_LOOKS.length];
 
-  // 애니메이션 방향에 따라 클래스 결정
   const getImageClass = (isCurrent: boolean) => {
     if (isCurrent) {
       return `absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 z-10 ` +
@@ -96,20 +95,26 @@ export default function QuickLooksSection() {
             {/* 이미지 슬라이드 */}
             <div className="relative w-full h-80 md:h-[28rem] overflow-hidden rounded-lg shadow">
               {/* 이전 이미지 (애니메이션) */}
-              <img
+              <Image
                 key={`prev-${prevItem.titleText}-${prevIndex}`}
                 src={prevItem.img}
                 alt={prevItem.titleText}
+                width={800}
+                height={600}
                 className={getImageClass(false)}
                 style={{ pointerEvents: 'none' }}
+                priority
               />
               {/* 현재 이미지 (애니메이션) */}
-              <img
+              <Image
                 key={`curr-${current.titleText}-${index}`}
                 src={current.img}
                 alt={current.titleText}
+                width={800}
+                height={600}
                 className={getImageClass(true)}
                 style={{ pointerEvents: 'none' }}
+                priority
               />
             </div>
           </div>
