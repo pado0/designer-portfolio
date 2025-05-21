@@ -5,24 +5,28 @@ import { useState, useEffect, useRef } from "react";
 const QUICK_LOOKS = [
   {
     img: "/asset/quick1.gif",
-    title: "Landing Page UI",
-    desc: "깔끔한 랜딩페이지 디자인과 인터랙션."
+    title: "Mobile QR Ordering",
+    titleText: "Mobile QR Ordering",
+    desc: "Built a review-friendly ordering flow and scaled it from scratch to 1,000 franchise locations.",
   },
   {
     img: "/asset/quick2.png",
-    title: "Dashboard Widgets",
-    desc: "데이터 시각화와 위젯 UI."
+    title: <>Paying Fines<br />—Before They're Late</>,
+    titleText: "Paying Fines—Before They're Late",
+    desc: "Partnered with traffic enforcement to integrate fine notifications and payments into one seamless flow.",
   },
   {
     img: "/asset/quick3.png",
-    title: "Mobile App Concept",
-    desc: "모바일 앱 UX 플로우."
+    title: "Branding for a New Ordering Habit",
+    titleText: "Branding for a New Ordering Habit",
+    desc: "Collaborated with the brand team to introduce QR ordering to customers unfamiliar with the experience.",
   },
   {
     img: "/asset/quick4.png",
-    title: "Brand Identity",
-    desc: "브랜드 컬러와 로고 디자인."
-  }
+    title: "Better QR Sticker",
+    titleText: "Better QR Sticker",
+    desc: "After 1 month of research, found that owners preferred stickers that matched their store's colors.",
+  },
 ];
 
 const ROLL_INTERVAL = 4000;
@@ -31,12 +35,19 @@ export default function QuickLooksSection() {
   const [index, setIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1: left, 1: right
+  const [animating, setAnimating] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const goTo = (newIndex: number, dir: number) => {
-    setPrevIndex(index);
+    if (animating) return;
+    const safeNewIndex = ((newIndex % QUICK_LOOKS.length) + QUICK_LOOKS.length) % QUICK_LOOKS.length;
+    setPrevIndex(index >= QUICK_LOOKS.length ? 0 : index);
     setDirection(dir);
-    setIndex((newIndex + QUICK_LOOKS.length) % QUICK_LOOKS.length);
+    setAnimating(true);
+    setTimeout(() => {
+      setIndex(safeNewIndex);
+      setAnimating(false);
+    }, 500); // 애니메이션 지속시간과 맞춤
   };
 
   const next = () => goTo(index + 1, 1);
@@ -45,7 +56,7 @@ export default function QuickLooksSection() {
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
-      goTo(index + 1, 1);
+      next();
     }, ROLL_INTERVAL);
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -53,8 +64,28 @@ export default function QuickLooksSection() {
     // eslint-disable-next-line
   }, [index]);
 
-  const current = QUICK_LOOKS[index];
-  const prevItem = QUICK_LOOKS[prevIndex];
+  const current = QUICK_LOOKS[index % QUICK_LOOKS.length];
+  const prevItem = QUICK_LOOKS[prevIndex % QUICK_LOOKS.length];
+
+  // 애니메이션 방향에 따라 클래스 결정
+  const getImageClass = (isCurrent: boolean) => {
+    if (isCurrent) {
+      return `absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 z-10 ` +
+        (direction === 1 ? 'animate-fadeInRight' : direction === -1 ? 'animate-fadeInLeft' : '');
+    } else {
+      return `absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 z-0 ` +
+        (direction === 1 ? 'animate-fadeOutLeft' : direction === -1 ? 'animate-fadeOutRight' : '');
+    }
+  };
+  const getTextClass = (isCurrent: boolean) => {
+    if (isCurrent) {
+      return `transition-all duration-500 z-10 ` +
+        (direction === 1 ? 'animate-fadeInUp' : direction === -1 ? 'animate-fadeInUp' : '');
+    } else {
+      return `absolute top-0 left-0 w-full transition-all duration-500 z-0 ` +
+        'animate-fadeOut';
+    }
+  };
 
   return (
     <section className="w-full py-16 md:py-24 bg-white">
@@ -66,32 +97,36 @@ export default function QuickLooksSection() {
             <div className="relative w-full h-80 md:h-[28rem] overflow-hidden rounded-lg shadow">
               {/* 이전 이미지 (애니메이션) */}
               <img
-                key={prevItem.img + prevIndex}
+                key={`prev-${prevItem.titleText}-${prevIndex}`}
                 src={prevItem.img}
-                alt={prevItem.title}
-                className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-700
-                  ${direction === 1 ? '-translate-x-full opacity-0' : direction === -1 ? 'translate-x-full opacity-0' : 'opacity-0'}
-                  ${prevIndex === index ? 'hidden' : ''}
-                `}
-                style={{ transitionProperty: 'opacity, transform' }}
+                alt={prevItem.titleText}
+                className={getImageClass(false)}
+                style={{ pointerEvents: 'none' }}
               />
               {/* 현재 이미지 (애니메이션) */}
               <img
-                key={current.img + index}
+                key={`curr-${current.titleText}-${index}`}
                 src={current.img}
-                alt={current.title}
-                className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-700
-                  ${direction === 1 ? 'translate-x-0 opacity-100' : direction === -1 ? 'translate-x-0 opacity-100' : 'opacity-100'}
-                `}
-                style={{ transitionProperty: 'opacity, transform' }}
+                alt={current.titleText}
+                className={getImageClass(true)}
+                style={{ pointerEvents: 'none' }}
               />
             </div>
           </div>
-          {/* 텍스트 박스: 상단 정렬, 가운데 정렬, 버튼은 하단 고정 */}
-          <div className="w-full md:w-1/3 flex flex-col items-center justify-between text-center h-64 md:h-80">
-            <div className="flex flex-col items-center justify-start w-full flex-grow">
-              <h3 className="text-xl md:text-2xl font-bold text-[#455dfe] mb-2 mt-2">{current.title}</h3>
-              <p className="text-gray-700 text-base md:text-lg mb-4">{current.desc}</p>
+          <div className="w-full md:w-1/3 flex flex-col items-center justify-between text-center h-80 md:h-[28rem]">
+            <div className="flex flex-col items-center justify-start w-full h-full relative">
+              {/* 이전 텍스트 (애니메이션) */}
+              {animating && (
+                <div className={getTextClass(false)} key={`prev-${prevItem.titleText}-${prevIndex}`} style={{ position: 'absolute', top: 0, left: 0, width: '100%' }}>
+                  <h3 className="text-xl md:text-2xl font-bold text-black mb-2">{typeof prevItem.title === 'string' ? prevItem.title : prevItem.title}</h3>
+                  <p className="text-gray-700 text-base md:text-lg mb-4">{prevItem.desc}</p>
+                </div>
+              )}
+              {/* 현재 텍스트 (애니메이션) */}
+              <div className={getTextClass(true)} key={`curr-${current.titleText}-${index}`}>
+                <h3 className="text-xl md:text-2xl font-bold text-black mb-2">{typeof current.title === 'string' ? current.title : current.title}</h3>
+                <p className="text-gray-700 text-base md:text-lg mb-4">{current.desc}</p>
+              </div>
             </div>
             {/* 방향키 버튼: 박스 하단에 고정, 가운데 정렬 */}
             <div className="flex flex-row items-center justify-center gap-4 w-full mb-2">
@@ -100,6 +135,7 @@ export default function QuickLooksSection() {
                 aria-label="이전 이미지"
                 onClick={prev}
                 type="button"
+                disabled={animating}
               >
                 <svg width="28" height="28" fill="none" stroke="#455dfe" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -110,6 +146,7 @@ export default function QuickLooksSection() {
                 aria-label="다음 이미지"
                 onClick={next}
                 type="button"
+                disabled={animating}
               >
                 <svg width="28" height="28" fill="none" stroke="#455dfe" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -119,6 +156,51 @@ export default function QuickLooksSection() {
           </div>
         </div>
       </div>
+      {/* 커스텀 애니메이션 */}
+      <style jsx>{`
+        .animate-fadeInRight {
+          animation: fadeInRight 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .animate-fadeInLeft {
+          animation: fadeInLeft 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .animate-fadeOutLeft {
+          animation: fadeOutLeft 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .animate-fadeOutRight {
+          animation: fadeOutRight 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .animate-fadeOut {
+          animation: fadeOut 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes fadeInRight {
+          from { opacity: 0; transform: translateX(40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInLeft {
+          from { opacity: 0; transform: translateX(-40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeOutLeft {
+          from { opacity: 1; transform: translateX(0); }
+          to { opacity: 0; transform: translateX(-40px); }
+        }
+        @keyframes fadeOutRight {
+          from { opacity: 1; transform: translateX(0); }
+          to { opacity: 0; transform: translateX(40px); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+      `}</style>
     </section>
   );
 } 

@@ -5,8 +5,8 @@ import { useState } from "react";
 const MENU = [
   { label: "Projects", href: "/#projects" },
   { label: "About Me", href: "/about" },
-  { label: "Resume", href: "/resume" },
-  { label: "LinkedIn", href: "https://linkedin.com", external: true },
+  { label: "Resume", href: "https://drive.google.com/file/d/1JK3-3ASmIgYH5Ji6KOSQw8jR0yMM8Ycb/view", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/silvy-yang-27bbb015b/", external: true },
 ];
 
 export default function Header() {
@@ -15,9 +15,9 @@ export default function Header() {
   return (
     <header className="w-full border-b border-gray-200 bg-white sticky top-0 z-50">
       <nav className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
-        <div className="text-xl font-bold tracking-tight text-[#455dfe] select-none">
-          Portfolio
-        </div>
+        <Link href="/#projects" className="text-xl font-bold tracking-tight text-[#455dfe] select-none">
+          silvy.yang
+        </Link>
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 items-center">
           {MENU.map((item) => (
