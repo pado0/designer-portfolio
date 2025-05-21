@@ -12,8 +12,8 @@ const QUICK_LOOKS = [
   },
   {
     img: "/asset/quick2.png",
-    title: <>Paying Fines<br />—Before They're Late</>,
-    titleText: "Paying Fines—Before They're Late",
+    title: <>Paying Fines<br />—Before They&apos;re Late</>,
+    titleText: "Paying Fines—Before They&apos;re Late",
     desc: "Partnered with traffic enforcement to integrate fine notifications and payments into one seamless flow.",
   },
   {
@@ -62,7 +62,7 @@ export default function QuickLooksSection() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [index]);
+  }, [index, next]);
 
   const current = QUICK_LOOKS[index % QUICK_LOOKS.length];
   const prevItem = QUICK_LOOKS[prevIndex % QUICK_LOOKS.length];

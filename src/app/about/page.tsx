@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function AboutPage() {
   const profiles = [
@@ -42,15 +43,19 @@ export default function AboutPage() {
   return (
     <section className="w-full py-16 md:py-24 bg-white">
       <div className="max-w-5xl mx-auto px-4 flex flex-col gap-16">
-        {profiles.map((profile, i) => (
+        {profiles.map((profile) => (
           <div key={profile.img} className="flex flex-col md:flex-row items-center gap-8">
             {/* 좌측 이미지 */}
             <div className="w-full md:w-4/5 flex items-center justify-center">
               <div className="relative w-full h-80 md:h-[28rem] overflow-hidden rounded-lg shadow">
-                <img
+                <Image
                   src={profile.img}
                   alt={profile.title ? profile.title + ' 이미지' : 'About 이미지'}
                   className="absolute top-0 left-0 w-full h-full object-cover"
+                  width={448}
+                  height={448}
+                  style={{objectFit: 'cover'}}
+                  priority
                 />
               </div>
             </div>
@@ -62,18 +67,16 @@ export default function AboutPage() {
               <div className="text-gray-700 text-base md:text-lg leading-relaxed">
                 {typeof profile.desc === 'string' ? profile.desc :
                   // desc가 JSX일 경우 h2에도 Inter 적용
-                  <>{
-                    (profile.desc as any).props && (profile.desc as any).props.children
-                      ? React.Children.map((profile.desc as any).props.children, (child: any) => {
-                          if (child && child.type === 'h2') {
-                            return React.cloneElement(child, {
-                              className: `${child.props.className || ''} font-[var(--font-inter)]`.trim()
-                            });
-                          }
-                          return child;
-                        })
-                      : profile.desc
-                  }</>
+                  <> {
+                    React.Children.map((profile.desc as React.ReactElement).props.children as React.ReactNode[], (child) => {
+                      if (React.isValidElement(child) && child.type === 'h2') {
+                        return React.cloneElement(child as React.ReactElement<{className?: string}>, {
+                          className: `${(child.props as { className?: string }).className || ''} font-[var(--font-inter)]`.trim()
+                        });
+                      }
+                      return child;
+                    })
+                  } </>
                 }
               </div>
             </div>
