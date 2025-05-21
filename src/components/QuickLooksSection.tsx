@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from 'next/image';
 
 const QUICK_LOOKS = [
@@ -39,7 +39,7 @@ export default function QuickLooksSection() {
   const [animating, setAnimating] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const goTo = (newIndex: number, dir: number) => {
+  const goTo = useCallback((newIndex: number, dir: number) => {
     if (animating) return;
     const safeNewIndex = ((newIndex % QUICK_LOOKS.length) + QUICK_LOOKS.length) % QUICK_LOOKS.length;
     setPrevIndex(index >= QUICK_LOOKS.length ? 0 : index);
@@ -49,10 +49,10 @@ export default function QuickLooksSection() {
       setIndex(safeNewIndex);
       setAnimating(false);
     }, 500); // 애니메이션 지속시간과 맞춤
-  };
+  }, [animating, index]);
 
-  const next = () => goTo(index + 1, 1);
-  const prev = () => goTo(index - 1, -1);
+  const next = useCallback(() => goTo(index + 1, 1), [index, goTo]);
+  const prev = useCallback(() => goTo(index - 1, -1), [index, goTo]);
 
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef.current);

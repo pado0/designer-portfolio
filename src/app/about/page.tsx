@@ -21,7 +21,7 @@ export default function AboutPage() {
         <>
           <h2 className="aboutme-section-title text-xl md:text-2xl font-bold text-black mb-4">Team Player? I Made a Whole Band</h2>
           <p className="aboutme-section-desc">
-            I formed an office rock band from scratch—recruited devs, jammed at work, and performed four times for 2,000+ employees. That's how much I love cross-functional collaboration.
+            I formed an office rock band from scratch—recruited devs, jammed at work, and performed four times for 2,000+ employees. That&apos;s how much I love cross-functional collaboration.
           </p>
         </>
       )
