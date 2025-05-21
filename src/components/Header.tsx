@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const MENU = [
   { label: "Projects", href: "/#projects" },
-  { label: "About Me", href: "/#about" },
+  { label: "About Me", href: "/about" },
   { label: "Resume", href: "/resume" },
   { label: "LinkedIn", href: "https://linkedin.com", external: true },
 ];
