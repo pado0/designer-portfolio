@@ -118,7 +118,7 @@ export default function QuickLooksSection() {
               />
             </div>
           </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center justify-between text-center h-80 md:h-[28rem]">
+          <div className="w-full md:w-[38%] flex flex-col items-center justify-between text-center h-80 md:h-[28rem]">
             <div className="flex flex-col items-center justify-start w-full h-full relative">
               {/* 이전 텍스트 (애니메이션) */}
               {animating && (
