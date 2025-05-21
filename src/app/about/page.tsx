@@ -68,7 +68,7 @@ export default function AboutPage() {
                 {typeof profile.desc === 'string' ? profile.desc :
                   // desc가 JSX일 경우 h2에도 Inter 적용
                   <> {
-                    React.Children.toArray((profile.desc as React.ReactElement).props.children).map((child) => {
+                    React.Children.toArray((profile.desc as React.ReactElement<{ children: React.ReactNode }> ).props.children).map((child) => {
                       if (React.isValidElement(child) && child.type === 'h2') {
                         return React.cloneElement(child as React.ReactElement<{className?: string}>, {
                           className: `${(child.props as { className?: string }).className || ''} font-[var(--font-inter)]`.trim()
