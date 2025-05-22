@@ -6,15 +6,16 @@ import Image from 'next/image';
 const QUICK_LOOKS = [
   {
     img: "/asset/quick1.gif",
-    title: "Mobile QR Ordering",
-    titleText: "Mobile QR Ordering",
-    desc: "Built a review-friendly ordering flow and scaled it from scratch to 1,000 franchise locations.",
-  },
-  {
-    img: "/asset/quick2.png",
     title: <>Paying Fines<br />—Before They&apos;re Late</>,
     titleText: "Paying Fines—Before They&apos;re Late",
     desc: "Partnered with traffic enforcement to integrate fine notifications and payments into one seamless flow.",
+    
+  },
+  {
+    img: "/asset/quick2.png",
+    title: "Mobile QR Ordering",
+    titleText: "Mobile QR Ordering",
+    desc: "Built a review-friendly ordering flow and scaled it from scratch to 1,000 franchise locations.",
   },
   {
     img: "/asset/quick3.png",
