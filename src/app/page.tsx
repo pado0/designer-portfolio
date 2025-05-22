@@ -1,4 +1,3 @@
-import Image from "next/image";
 import IntroSection from "@/components/IntroSection";
 import CaseStudySection from "@/components/CaseStudySection";
 import QuickLooksSection from "@/components/QuickLooksSection";

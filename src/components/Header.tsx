@@ -27,14 +27,14 @@ export default function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors px-2 py-1 rounded hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
+                  className="transition-colors px-2 py-1 rounded font-semibold hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
                 >
                   {item.label}
                 </a>
               ) : (
                 <Link
                   href={item.href}
-                  className="transition-colors px-2 py-1 rounded hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
+                  className="transition-colors px-2 py-1 rounded font-semibold hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
                 >
                   {item.label}
                 </Link>
@@ -79,7 +79,7 @@ export default function Header() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block transition-colors px-2 py-2 rounded hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
+                        className="block transition-colors px-2 py-2 rounded font-semibold hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
                         onClick={() => setOpen(false)}
                       >
                         {item.label}
@@ -87,7 +87,7 @@ export default function Header() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="block transition-colors px-2 py-2 rounded hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
+                        className="block transition-colors px-2 py-2 rounded font-semibold hover:text-[#455dfe] focus:text-[#455dfe] focus:outline-none"
                         onClick={() => setOpen(false)}
                       >
                         {item.label}

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import Image from 'next/image';
 
 const QUICK_LOOKS = [
   {
@@ -11,8 +12,8 @@ const QUICK_LOOKS = [
   },
   {
     img: "/asset/quick2.png",
-    title: <>Paying Fines<br />—Before They're Late</>,
-    titleText: "Paying Fines—Before They're Late",
+    title: <>Paying Fines<br />—Before They&apos;re Late</>,
+    titleText: "Paying Fines—Before They&apos;re Late",
     desc: "Partnered with traffic enforcement to integrate fine notifications and payments into one seamless flow.",
   },
   {
@@ -38,7 +39,7 @@ export default function QuickLooksSection() {
   const [animating, setAnimating] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const goTo = (newIndex: number, dir: number) => {
+  const goTo = useCallback((newIndex: number, dir: number) => {
     if (animating) return;
     const safeNewIndex = ((newIndex % QUICK_LOOKS.length) + QUICK_LOOKS.length) % QUICK_LOOKS.length;
     setPrevIndex(index >= QUICK_LOOKS.length ? 0 : index);
@@ -48,10 +49,10 @@ export default function QuickLooksSection() {
       setIndex(safeNewIndex);
       setAnimating(false);
     }, 500); // 애니메이션 지속시간과 맞춤
-  };
+  }, [animating, index]);
 
-  const next = () => goTo(index + 1, 1);
-  const prev = () => goTo(index - 1, -1);
+  const next = useCallback(() => goTo(index + 1, 1), [index, goTo]);
+  const prev = useCallback(() => goTo(index - 1, -1), [index, goTo]);
 
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -61,13 +62,11 @@ export default function QuickLooksSection() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-    // eslint-disable-next-line
-  }, [index]);
+  }, [index, next]);
 
   const current = QUICK_LOOKS[index % QUICK_LOOKS.length];
   const prevItem = QUICK_LOOKS[prevIndex % QUICK_LOOKS.length];
 
-  // 애니메이션 방향에 따라 클래스 결정
   const getImageClass = (isCurrent: boolean) => {
     if (isCurrent) {
       return `absolute top-0 left-0 w-full h-full object-cover transition-all duration-500 z-10 ` +
@@ -94,26 +93,32 @@ export default function QuickLooksSection() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="w-full md:w-2/3 flex items-center justify-center relative lg:w-[64rem] md:w-[32rem]">
             {/* 이미지 슬라이드 */}
-            <div className="relative w-full h-80 md:h-[28rem] overflow-hidden rounded-lg shadow">
+            <div className="relative w-full h-80 md:h-[28rem] overflow-hidden rounded-[2.5rem] shadow">
               {/* 이전 이미지 (애니메이션) */}
-              <img
+              <Image
                 key={`prev-${prevItem.titleText}-${prevIndex}`}
                 src={prevItem.img}
                 alt={prevItem.titleText}
-                className={getImageClass(false)}
+                width={800}
+                height={600}
+                className={getImageClass(false) + ' rounded-[2.5rem]'}
                 style={{ pointerEvents: 'none' }}
+                priority
               />
               {/* 현재 이미지 (애니메이션) */}
-              <img
+              <Image
                 key={`curr-${current.titleText}-${index}`}
                 src={current.img}
                 alt={current.titleText}
-                className={getImageClass(true)}
+                width={800}
+                height={600}
+                className={getImageClass(true) + ' rounded-[2.5rem]'}
                 style={{ pointerEvents: 'none' }}
+                priority
               />
             </div>
           </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center justify-between text-center h-80 md:h-[28rem]">
+          <div className="w-full md:w-[38%] flex flex-col items-center justify-between text-center h-80 md:h-[28rem]">
             <div className="flex flex-col items-center justify-start w-full h-full relative">
               {/* 이전 텍스트 (애니메이션) */}
               {animating && (
@@ -129,7 +134,7 @@ export default function QuickLooksSection() {
               </div>
             </div>
             {/* 방향키 버튼: 박스 하단에 고정, 가운데 정렬 */}
-            <div className="flex flex-row items-center justify-center gap-4 w-full mb-2">
+            <div className="flex flex-row items-center justify-center gap-4 w-full mb-1 md:mb-2">
               <button
                 className="bg-white/80 hover:bg-[#455dfe]/10 border border-gray-200 rounded-full p-2 shadow transition-colors focus:outline-none focus:ring-2 focus:ring-[#455dfe]"
                 aria-label="이전 이미지"
