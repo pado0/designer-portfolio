@@ -3,19 +3,19 @@ import Image from 'next/image';
 const CASE_STUDIES = [
   {
     title: <>
-      How I Reinvented POS UX<br />—and Drove +40% Growth
-    </>,
-    titleText: "How I Reinvented POS UX—and Drove +40% Growth",
-    img: "/asset/case3-thumbnail.png",
-    link: "https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ea21919550a806e9428cebad06f3fcc"
-  },
-  {
-    title: <>
       What is getting a Government<br /> Certificate took just 10 seconds?
     </>,
     titleText: "What is getting a Government Certificate took just 10 seconds?",
-    img: "/asset/case1-thumbnail.png",
+    img: "/asset/case3-thumbnail.png",
     link: "https://stingy-alto-975.notion.site/What-is-getting-a-Government-Certificate-took-just-10-seconds-1f121919550a801083eaf7c7dd7c67f0"
+  },
+  {
+    title: <>
+      How I Reinvented POS UX<br />—and Drove +40% Growth
+    </>,
+    titleText: "How I Reinvented POS UX—and Drove +40% Growth",
+    img: "/asset/case1-thumbnail.png",
+    link: "https://stingy-alto-975.notion.site/How-I-Reinvented-POS-UX-and-Drove-40-Growth-1ea21919550a806e9428cebad06f3fcc"
   },
   {
     title: <>
