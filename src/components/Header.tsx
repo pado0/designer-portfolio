@@ -5,7 +5,7 @@ import { useState } from "react";
 const MENU = [
   { label: "Projects", href: "/#projects" },
   { label: "About Me", href: "/about" },
-  { label: "Resume", href: "https://drive.google.com/file/d/1JK3-3ASmIgYH5Ji6KOSQw8jR0yMM8Ycb/view", external: true },
+  { label: "Resume", href: "https://drive.google.com/file/d/1zifGGwvWp-h_DD0r0jsVUN2NszrvS_QN/view?usp=sharing", external: true },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/silvy-yang-27bbb015b/", external: true },
 ];
 
